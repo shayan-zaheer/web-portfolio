@@ -11,6 +11,7 @@
   "dependencies": {
     "@studio-freight/react-lenis": "^0.0.47",
     "@tailwindcss/postcss": "^4.1.0",
+    "lucide-react": "^0.487.0",
     "next": "15.2.4",
     "postcss": "^8.5.3",
     "react": "^19.0.0",
