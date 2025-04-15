@@ -7,8 +7,9 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { useRef, useEffect, useState } from "react";
 import Card from "./card";
+import { Project } from "@/lib/interfaces";
 
-const Slider = ({ projects }) => {
+const Slider = ({ projects } : {projects: Project[]}) => {
     const navigationPrevRef = useRef(null);
     const navigationNextRef = useRef(null);
     const swiperRef = useRef(null);
@@ -75,7 +76,6 @@ const Slider = ({ projects }) => {
                     className="!overflow-y-visible !overflow-x-clip"
                     ref={swiperRef}
                     modules={[Navigation, Autoplay, Pagination]}
-                    spaceBetween={16}
                     autoplay={false}
                     slidesPerView={1}
                     loop={true}
@@ -91,19 +91,24 @@ const Slider = ({ projects }) => {
                         enabled: false,
                     }}
                     breakpoints={{
-                        640: {
+                        320: {
                             slidesPerView: 1,
-                            navigation: {
-                                enabled: true,
-                            },
                         },
-                        768: {
+                        480: {
                             slidesPerView: 2,
-                            spaceBetween: 20,
+                            spaceBetween: 10,
                         },
-                        1024: {
+                        640: {
                             slidesPerView: 3,
                             spaceBetween: 12,
+                        },
+                        768: {
+                            slidesPerView: 4,
+                            spaceBetween: 15,
+                        },
+                        1024: {
+                            slidesPerView: 5,
+                            spaceBetween: 18
                         },
                     }}
                     onInit={(swiper) => {
@@ -115,17 +120,17 @@ const Slider = ({ projects }) => {
                         }
                     }}
                 >
-                    {projects.map((project, index: number) => (
+                    {projects.map((project: Project, index: number) => (
                         <SwiperSlide
                             key={index}
                             className="pb-8 !overflow-y-visible"
                         >
                             <div
-                                className="rounded-lg shadow-lg relative group cursor-pointer z-10"
+                                className="relative group cursor-pointer z-10"
                             >
                                 <img
-                                className="w-full object-cover p-4"
-                                src="web.png"
+                                className="w-full object-cover rounded-lg shadow-lg"
+                                src={project.image}
                                 alt="Card image"
                             />
                                 <Card

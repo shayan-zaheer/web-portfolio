@@ -2,7 +2,7 @@ import Link from "next/link";
 
 function Navbar() {
     return (
-        <div className="flex items-center py-4 px-4 md:px-12 text-white font-poppins justify-between text-shadow-lg z-20 sm:text-sm md:text-md">
+        <div className="flex items-center py-4 px-4 md:px-12 text-white font-poppins justify-between text-shadow-lg z-60 sm:text-sm">
             <div className="flex items-center gap-12">
                 <Link href="/">
                     <img

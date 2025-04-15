@@ -26,6 +26,7 @@ function Page() {
                 "Admin panel",
                 "Microservices architecture",
             ],
+            image: "hirevision.jpg",
             links: {
                 github: "https://github.com/shayan-zaheer/hirevision",
                 live: "https://hirevision.com",
@@ -46,21 +47,23 @@ function Page() {
                 github: "https://github.com/shayan-zaheer/streamease",
                 live: "https://streamease.com",
             },
+            image: "streamease.jpg",
         },
         {
             name: "MrBroast-panel",
             description:
-                "An admin panel for managing and analyzing data from a specific web application or service.",
+                "An admin panel for a fast food chain, managing and tracking orders, delivery riders, and waiters alongside order history.",
             stack: ["React", "Node.js", "Express", "MongoDB"],
             features: [
                 "Data management",
-                "User authentication",
                 "Analytics dashboard",
             ],
             links: {
                 github: "https://github.com/shayan-zaheer/mrbroast-panel",
                 live: "https://mrbroast-panel.com",
             },
+            image: "mrbroast.jpg",
+
         },
         {
             name: "EZScript",
@@ -77,6 +80,7 @@ function Page() {
                 github: "https://github.com/shayan-zaheer/ezscript",
                 live: "https://ezscript.com",
             },
+            image: "ezscript.jpg",
         },
         {
             name: "Exoplanetarium",
@@ -92,6 +96,7 @@ function Page() {
                 github: "https://github.com/hashirjamal/exoplanetarium",
                 live: "https://exoplanetarium.com",
             },
+            image: "exoplanetarium.jpg",
         },
         {
             name: "GemVault",
@@ -114,6 +119,7 @@ function Page() {
                 github: "https://github.com/shayan-zaheer/gemvault",
                 live: "https://gemvault.com",
             },
+            image: "gemvault.jpg",
         },
     ];
 
