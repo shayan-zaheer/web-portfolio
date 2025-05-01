@@ -22,21 +22,20 @@ function Card({ project }: { project: Project }) {
     };
 
     return (
-        <div className="flex flex-col bg-[#171717] text-white rounded-lg overflow-hidden shadow-lg absolute left-0 right-0 z-20 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-opacity duration-300 top-[-24rem] w-[500px]">
-            {/* <img
-                className="w-full h-48 object-cover"
-                src={project.image}
-                alt="Card image"
-            /> */}
+        <div className="flex flex-col bg-[#171717] text-white rounded-lg overflow-hidden shadow-lg absolute inset-0 z-20 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-opacity duration-300">
             <video
                 ref={videoRef}
                 src="portfolio.mkv"
-                className="w-full h-48 object-cover"
+                className="w-full h-48 object-cover brightness-50 relative"
                 autoPlay
                 muted
                 playsInline
                 loop
             ></video>
+            <div className="absolute inset-0 flex flex-col gap-2 items-center justify-center text-center text-shadow-lg">
+            {/* <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-shadow-lg bg-gradient-to-b from-black/40 via-transparent to-black/40">
+                <h1 className="font-bold">{project.name}</h1>
+            </div> */}
             <div className="px-6 py-4">
                 <div className="flex justify-between items-center mb-2">
                     <h3 className="font-bold text-xl">{project.name}</h3>
@@ -108,3 +107,4 @@ function Card({ project }: { project: Project }) {
 }
 
 export default Card;
+

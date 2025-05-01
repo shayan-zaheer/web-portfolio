@@ -3,125 +3,180 @@
 import Slider from "@/components/slider";
 import ReactLenis from "@studio-freight/react-lenis";
 import { Info, PlayIcon } from "lucide-react";
+import {
+    Bot,
+    Globe,
+    Server,
+    MessageCircle,
+    Boxes,
+    ShieldCheck,
+    Rocket,
+    Lightbulb
+  } from "lucide-react";
+  
 
 function Page() {
-    const projects = [
-        {
-            name: "HireVision",
-            description:
-                "A job app with a WhatsApp chatbot that helps users find jobs and submit their CVs. It includes an admin panel for managing job listings and CVs.",
-            stack: [
-                "Node.js",
-                "Hugging Face",
-                "Google Gemini API",
-                "Pinecone",
-                "Twilio",
-                "Redis",
-                "Next.js",
-            ],
-            features: [
-                "WhatsApp chatbot",
-                "Dynamic job listings",
-                "CV submission",
-                "Admin panel",
-                "Microservices architecture",
-            ],
-            image: "hirevision.jpg",
-            links: {
-                github: "https://github.com/shayan-zaheer/hirevision",
-                live: "https://hirevision.com",
-            },
-        },
-        {
-            name: "Streamease",
-            description:
-                "A video streaming platform where users can stream and watch content, with a focus on ease of access and user experience.",
-            stack: ["React", "Node.js", "MongoDB", "Express", "Socket.io"],
-            features: [
-                "Live streaming",
-                "User authentication",
-                "Content discovery",
-                "Real-time chat",
-            ],
-            links: {
-                github: "https://github.com/shayan-zaheer/streamease",
-                live: "https://streamease.com",
-            },
-            image: "streamease.jpg",
-        },
-        {
-            name: "MrBroast-panel",
-            description:
-                "An admin panel for a fast food chain, managing and tracking orders, delivery riders, and waiters alongside order history.",
-            stack: ["React", "Node.js", "Express", "MongoDB"],
-            features: [
-                "Data management",
-                "Analytics dashboard",
-            ],
-            links: {
-                github: "https://github.com/shayan-zaheer/mrbroast-panel",
-                live: "https://mrbroast-panel.com",
-            },
-            image: "mrbroast.jpg",
+    // const projects = [
+    //     {
+    //         name: "HireVision",
+    //         description:
+    //             "A job app with a WhatsApp chatbot that helps users find jobs and submit their CVs. It includes an admin panel for managing job listings and CVs.",
+    //         stack: [
+    //             "Node.js",
+    //             "Hugging Face",
+    //             "Google Gemini API",
+    //             "Pinecone",
+    //             "Twilio",
+    //             "Redis",
+    //             "Next.js",
+    //         ],
+    //         features: [
+    //             "WhatsApp chatbot",
+    //             "Dynamic job listings",
+    //             "CV submission",
+    //             "Admin panel",
+    //             "Microservices architecture",
+    //         ],
+    //         image: "hirevision.jpg",
+    //         links: {
+    //             github: "https://github.com/shayan-zaheer/hirevision",
+    //             live: "https://hirevision.com",
+    //         },
+    //     },
+    //     {
+    //         name: "Streamease",
+    //         description:
+    //             "A video streaming platform where users can stream and watch content, with a focus on ease of access and user experience.",
+    //         stack: ["React", "Node.js", "MongoDB", "Express", "Socket.io"],
+    //         features: [
+    //             "Live streaming",
+    //             "User authentication",
+    //             "Content discovery",
+    //             "Real-time chat",
+    //         ],
+    //         links: {
+    //             github: "https://github.com/shayan-zaheer/streamease",
+    //             live: "https://streamease.com",
+    //         },
+    //         image: "streamease.jpg",
+    //     },
+    //     {
+    //         name: "MrBroast-panel",
+    //         description:
+    //             "An admin panel for a fast food chain, managing and tracking orders, delivery riders, and waiters alongside order history.",
+    //         stack: ["React", "Node.js", "Express", "MongoDB"],
+    //         features: [
+    //             "Data management",
+    //             "Analytics dashboard",
+    //         ],
+    //         links: {
+    //             github: "https://github.com/shayan-zaheer/mrbroast-panel",
+    //             live: "https://mrbroast-panel.com",
+    //         },
+    //         image: "mrbroast.jpg",
 
+    //     },
+    //     {
+    //         name: "EZScript",
+    //         description:
+    //             "A web-based IDE designed specifically for JavaScript, with future expansions to other languages.",
+    //         stack: ["React", "Node.js", "WebSockets"],
+    //         features: [
+    //             "Real-time collaboration",
+    //             "Code editor",
+    //             "Live preview",
+    //             "Syntax highlighting",
+    //         ],
+    //         links: {
+    //             github: "https://github.com/shayan-zaheer/ezscript",
+    //             live: "https://ezscript.com",
+    //         },
+    //         image: "ezscript.jpg",
+    //     },
+    //     {
+    //         name: "Exoplanetarium",
+    //         description:
+    //             "An interactive platform for learning about exoplanets, using data from space agencies and astronomical research.",
+    //         stack: ["React", "D3.js", "Node.js"],
+    //         features: [
+    //             "Interactive star maps",
+    //             "Exoplanet data visualization",
+    //             "Searchable database",
+    //         ],
+    //         links: {
+    //             github: "https://github.com/hashirjamal/exoplanetarium",
+    //             live: "https://exoplanetarium.com",
+    //         },
+    //         image: "exoplanetarium.jpg",
+    //     },
+    //     {
+    //         name: "GemVault",
+    //         description:
+    //             "A blockchain-powered marketplace for buying and selling gemstones, where transactions are verified through NFTs and smart contracts.",
+    //         stack: [
+    //             "Ethereum",
+    //             "MetaMask",
+    //             "Smart Contracts",
+    //             "Node.js",
+    //             "MongoDB",
+    //         ],
+    //         features: [
+    //             "Gemstone NFTs",
+    //             "Smart contract verification",
+    //             "Escrow payment system",
+    //             "Certificate verification",
+    //         ],
+    //         links: {
+    //             github: "https://github.com/shayan-zaheer/gemvault",
+    //             live: "https://gemvault.com",
+    //         },
+    //         image: "gemvault.jpg",
+    //     },
+    // ];
+
+      const offers = [
+        {
+          icon: Bot,
+          title: "AI-Powered Chatbots",
+          description: "I build custom AI chatbots for websites and WhatsApp using Gemini, Hugging Face, and Pinecone — enabling smart automation and better customer engagement."
         },
         {
-            name: "EZScript",
-            description:
-                "A web-based IDE designed specifically for JavaScript, with future expansions to other languages.",
-            stack: ["React", "Node.js", "WebSockets"],
-            features: [
-                "Real-time collaboration",
-                "Code editor",
-                "Live preview",
-                "Syntax highlighting",
-            ],
-            links: {
-                github: "https://github.com/shayan-zaheer/ezscript",
-                live: "https://ezscript.com",
-            },
-            image: "ezscript.jpg",
+          icon: Globe,
+          title: "Custom Web Applications",
+          description: "Full-stack web apps tailored to your business using Next.js, Node.js, and MongoDB with modern design, performance, and scalability."
         },
         {
-            name: "Exoplanetarium",
-            description:
-                "An interactive platform for learning about exoplanets, using data from space agencies and astronomical research.",
-            stack: ["React", "D3.js", "Node.js"],
-            features: [
-                "Interactive star maps",
-                "Exoplanet data visualization",
-                "Searchable database",
-            ],
-            links: {
-                github: "https://github.com/hashirjamal/exoplanetarium",
-                live: "https://exoplanetarium.com",
-            },
-            image: "exoplanetarium.jpg",
+          icon: Server,
+          title: "Backend & API Development",
+          description: "I develop clean, scalable backend services using Node.js, NestJS, or Flask — perfect for real-time, data-driven platforms."
         },
         {
-            name: "GemVault",
-            description:
-                "A blockchain-powered marketplace for buying and selling gemstones, where transactions are verified through NFTs and smart contracts.",
-            stack: [
-                "Ethereum",
-                "MetaMask",
-                "Smart Contracts",
-                "Node.js",
-                "MongoDB",
-            ],
-            features: [
-                "Gemstone NFTs",
-                "Smart contract verification",
-                "Escrow payment system",
-                "Certificate verification",
-            ],
-            links: {
-                github: "https://github.com/shayan-zaheer/gemvault",
-                live: "https://gemvault.com",
-            },
-            image: "gemvault.jpg",
+          icon: MessageCircle,
+          title: "WhatsApp & API Integration",
+          description: "Integrate WhatsApp Business API and build automation that connects directly with users, collects data, and provides real-time responses."
         },
-    ];
+        {
+          icon: Boxes,
+          title: "Microservices Architecture",
+          description: "I structure large-scale apps using microservices and tools like RabbitMQ and Redis to ensure flexibility, fault-tolerance, and independent scaling."
+        },
+        {
+          icon: ShieldCheck,
+          title: "Web3 Solutions",
+          description: "Secure NFT & crypto apps with smart contracts, MetaMask integration, and token-based access — perfect for modern decentralized platforms."
+        },
+        {
+          icon: Rocket,
+          title: "Startup MVP Development",
+          description: "Quickly turn your ideas into working MVPs with rapid prototyping, clean UI, and optimized backend logic — perfect for product validation."
+        },
+        {
+          icon: Lightbulb,
+          title: "Tech Consulting & Strategy",
+          description: "I help teams and solo founders choose the right tech stack, design robust systems, and solve technical challenges efficiently."
+        }
+      ];
+      
 
     return (
         <ReactLenis root>
@@ -165,9 +220,9 @@ function Page() {
                             </div>
                             <div className="mt-6 w-full">
                                 <h2 className="text-xl sm:text-2xl md:text-3xl mt-2">
-                                    My List
+                                    What I Offer
                                 </h2>
-                                <Slider projects={projects} />
+                                <Slider offers={offers} />
                             </div>
                         </div>
                     </div>

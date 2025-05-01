@@ -1,3 +1,5 @@
+import { LucideIcon } from "lucide-react";
+
 interface Links {
     github: string;
     live: string;
@@ -11,4 +13,10 @@ export interface Project {
     links: Links;
     image: string;
     video?: string;
+}
+
+export interface Offer {
+    icon: LucideIcon;
+    title: string;
+    description: string;
 }

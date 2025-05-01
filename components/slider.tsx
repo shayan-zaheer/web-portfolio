@@ -6,26 +6,24 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { useRef, useEffect, useState } from "react";
-import Card from "./card";
-import { Project } from "@/lib/interfaces";
+import { Offer } from "@/lib/interfaces";
 
-const Slider = ({ projects } : {projects: Project[]}) => {
+const Slider = ({ offers }: { offers: Offer[] }) => {
     const navigationPrevRef = useRef(null);
     const navigationNextRef = useRef(null);
-    const swiperRef = useRef(null);
     const [isMounted, setIsMounted] = useState(false);
 
     useEffect(() => {
         setIsMounted(true);
     }, []);
 
-    if (!projects || projects.length === 0) {
-        return <div className="text-center py-10">No projects available</div>;
+    if (!offers || offers.length === 0) {
+        return <div className="text-center py-10">No offers available</div>;
     }
 
     return (
         <div className="relative w-full max-w-full py-2 overflow-visible">
-            <div className="hidden sm:block absolute top-1/2 -left-2 z-10 transform -translate-y-1/2">
+            <div className="hidden sm:block absolute top-1/2 -left-9 z-10 transform -translate-y-1/2">
                 <button
                     ref={navigationPrevRef}
                     className="bg-white rounded-full p-2 shadow-md hover:bg-gray-100 transition-colors"
@@ -48,7 +46,7 @@ const Slider = ({ projects } : {projects: Project[]}) => {
                 </button>
             </div>
 
-            <div className="hidden sm:block absolute top-1/2 -right-2 z-10 transform -translate-y-1/2">
+            <div className="hidden sm:block absolute top-1/2 -right-9 z-10 transform -translate-y-1/2">
                 <button
                     ref={navigationNextRef}
                     className="bg-white rounded-full p-2 shadow-md hover:bg-gray-100 transition-colors"
@@ -74,12 +72,12 @@ const Slider = ({ projects } : {projects: Project[]}) => {
             {isMounted && (
                 <Swiper
                     className="!overflow-y-visible !overflow-x-clip"
-                    ref={swiperRef}
                     modules={[Navigation, Autoplay, Pagination]}
-                    autoplay={false}
                     slidesPerView={1}
+                    spaceBetween={10}
                     loop={true}
-                    // autoplay={{ delay: 5000, disableOnInteraction: false }}
+                    grabCursor={true}
+                    autoplay={{ delay: 5000, disableOnInteraction: false }}
                     pagination={{
                         clickable: true,
                         dynamicBullets: true,
@@ -88,56 +86,43 @@ const Slider = ({ projects } : {projects: Project[]}) => {
                     navigation={{
                         prevEl: navigationPrevRef.current,
                         nextEl: navigationNextRef.current,
-                        enabled: false,
                     }}
                     breakpoints={{
-                        320: {
-                            slidesPerView: 1,
-                        },
-                        480: {
-                            slidesPerView: 2,
-                            spaceBetween: 10,
-                        },
                         640: {
-                            slidesPerView: 3,
-                            spaceBetween: 12,
-                        },
-                        768: {
-                            slidesPerView: 4,
+                            slidesPerView: 2,
                             spaceBetween: 15,
                         },
-                        1024: {
-                            slidesPerView: 5,
-                            spaceBetween: 18
+                        960: {
+                            slidesPerView: 3, 
+                            spaceBetween: 20,
                         },
-                    }}
-                    onInit={(swiper) => {
-                        if (navigationPrevRef.current && navigationNextRef.current) {
-                            swiper.params.navigation.prevEl = navigationPrevRef.current;
-                            swiper.params.navigation.nextEl = navigationNextRef.current;
-                            swiper.navigation.init();
-                            swiper.navigation.update();
+                        1280: {
+                            slidesPerView: 4,
+                            spaceBetween: 22,
                         }
                     }}
+                    onBeforeInit={(swiper) => {
+                        // @ts-ignore
+                        swiper.params.navigation.prevEl = navigationPrevRef.current;
+                        // @ts-ignore
+                        swiper.params.navigation.nextEl = navigationNextRef.current;
+                    }}
                 >
-                    {projects.map((project: Project, index: number) => (
+                    {offers.map((offer, index) => (
                         <SwiperSlide
-                            key={index}
-                            className="pb-8 !overflow-y-visible"
-                        >
-                            <div
-                                className="relative group cursor-pointer z-10"
-                            >
-                                <img
-                                className="w-full object-cover rounded-lg shadow-lg"
-                                src={project.image}
-                                alt="Card image"
-                            />
-                                <Card
-                                    project={project}
-                                />
-                            </div>
-                        </SwiperSlide>
+                        key={index}
+                        className="h-full pb-8"
+                    >
+                        <div className="bg-zinc-900 w-full h-40 sm:h-48 md:h-56 rounded-lg border border-zinc-700 flex flex-col items-center justify-center px-3 hover:scale-[1.01] transition ease-in-out duration-300">
+                            <offer.icon className="text-4xl sm:text-5xl text-indigo-600" />
+                            <h2 className="text-lg sm:text-xl font-bold text-center text-white mt-2 sm:mt-3">
+                                {offer.title}
+                            </h2>
+                            <p className="text-zinc-300 text-xs sm:text-sm text-center px-2 sm:px-4 mt-1 sm:mt-2">
+                                {offer.description}
+                            </p>
+                        </div>
+                    </SwiperSlide>
                     ))}
                 </Swiper>
             )}
