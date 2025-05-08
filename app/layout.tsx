@@ -32,7 +32,7 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body className={`${pulp.variable} ${poppins.variable}`}>
-                <div className="flex flex-col bg-[#141414]">
+                <div className="flex flex-col min-h-screen bg-[#141414]">
                     <div className="fixed top-0 left-0 right-0 h-40 bg-gradient-to-b from-black to-transparent z-10" />
 
                     <Navbar />
