@@ -187,7 +187,7 @@ function Page() {
                     muted
                     playsInline
                     loop
-                    className="absolute top-0 left-0 w-full h-full object-cover"
+                    className="fixed top-0 left-0 w-full h-screen object-cover"
                 />
                 
                 <div className="absolute inset-0 flex z-20 py-24">
@@ -219,7 +219,7 @@ function Page() {
                                 </button>
                             </div>
                             <div className="mt-6 w-full">
-                                <h2 className="text-xl sm:text-2xl md:text-3xl mt-2">
+                                <h2 className="text-xl sm:text-2xl md:text-3xl my-2">
                                     What I Offer
                                 </h2>
                                 <Slider offers={offers} />

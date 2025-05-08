@@ -14,7 +14,7 @@ function page() {
             <h2 className="text-4xl sm:text-5xl md:text-6xl text-white mb-6">
                 Who's watching?
             </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-2">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-2">
                 {smileys.map((smiley, index) => (
                     <Link href={smiley.href} key={index}>
                         <Smiley color={smiley.color} section={smiley.section} />
