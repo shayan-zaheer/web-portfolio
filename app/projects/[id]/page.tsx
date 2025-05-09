@@ -1,7 +1,7 @@
 "use client";
 
 import Suggestions from "@/components/suggestions";
-import ReactLenis from "@studio-freight/react-lenis";
+import { ReactLenis } from 'lenis/react'
 import { InfoIcon, PlayIcon } from "lucide-react";
 import { FaReact, FaNodeJs } from "react-icons/fa";
 import { VscAzure } from "react-icons/vsc";
@@ -84,6 +84,7 @@ function page({ params }: { params: Promise<{ id: string }> }) {
                     <Image
                         src={selectedProject!.image}
                         alt=""
+                        fill
                         className="absolute top-0 left-0 w-full h-screen object-cover"
                     />
                     <div className="absolute inset-0 flex z-20 py-24">
@@ -149,6 +150,7 @@ function page({ params }: { params: Promise<{ id: string }> }) {
                                     <Image
                                         src={`/${person.name.split(" ")[0].toLowerCase()}.jpeg`}
                                         alt={person.name}
+                                        fill
                                         className="w-full h-full object-cover object-center"
                                         priority
                                     />

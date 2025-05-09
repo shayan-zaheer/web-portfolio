@@ -6,12 +6,13 @@ function Suggestions({ number, image }: { number: number; image: string }) {
             <p className="text-[300px] font-pulp text-[#4F4F4F] opacity-70">
                 {number}
             </p>
-
             <Image
                 priority
                 src={image}
                 alt="suggested"
-                className="absolute left-30 h-[220px] w-[150px] object-cover rounded-lg z-10 shadow-lg"
+                width={150}
+                height={220}
+                className="absolute h-[220px] w-[150px] left-30 object-cover rounded-lg z-10 shadow-lg"
             />
         </div>
     );
