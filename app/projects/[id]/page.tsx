@@ -25,11 +25,33 @@ import {
 } from "react-icons/si";
 import React, { use } from "react";
 import {portfolio} from "@/lib/constants";
+import Image from "next/image";
 
 function page({ params }: { params: Promise<{ id: string }> }) {
     const id = +use(params).id;
 
-    const techIcons = {
+    type Tech =
+  | "react"
+  | "node.js"
+  | "express"
+  | "socket.io"
+  | "mongodb"
+  | "javascript"
+  | "typescript"
+  | "next.js"
+  | "hugging face"
+  | "wa business api"
+  | "redis"
+  | "google gemini api"
+  | "firebase"
+  | "react three fiber"
+  | "ethereum"
+  | "solidity"
+  | "postgresql"
+  | "mysql"
+  | "azure blob storage";
+
+    const techIcons: Record<Tech, JSX.Element> = {
         react: <FaReact className="text-blue-400" />,
         "node.js": <FaNodeJs className="text-green-500" />,
         express: <SiExpress className="text-gray-100" />,
@@ -59,8 +81,8 @@ function page({ params }: { params: Promise<{ id: string }> }) {
         <ReactLenis root>
             <div className="w-full h-screen overflow-visible">
                 <div>
-                    <img
-                        src={selectedProject?.image}
+                    <Image
+                        src={selectedProject!.image}
                         alt=""
                         className="absolute top-0 left-0 w-full h-screen object-cover"
                     />
@@ -124,10 +146,11 @@ function page({ params }: { params: Promise<{ id: string }> }) {
                                 className="bg-[#1c1c1c] rounded-xl pb-4 flex flex-col items-center text-center shadow-md hover:scale-105 transition-transform duration-300"
                             >
                                 <div className="w-full h-32 sm:h-50 md:h-68 mb-4 rounded-lg overflow-hidden relative">
-                                    <img
+                                    <Image
                                         src={`/${person.name.split(" ")[0].toLowerCase()}.jpeg`}
                                         alt={person.name}
                                         className="w-full h-full object-cover object-center"
+                                        priority
                                     />
                                 </div>
 

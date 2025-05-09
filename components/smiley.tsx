@@ -1,7 +1,9 @@
+import Image from "next/image";
+
 function Smiley({ section, color }: { section: string; color: string }) {
     return (
         <div>
-            <img
+            <Image
                 src="yellow.jpg"
                 className={`w-28 h-28 md:w-36 md:h-36 mb-2 hover:scale-105 hover:contrast-125 transition-all duration-300 saturate-150 rounded-md filter ${
                     color == "red"
