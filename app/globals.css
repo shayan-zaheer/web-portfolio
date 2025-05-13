@@ -131,6 +131,16 @@
     }
 }
 
+@keyframes gradientBG {
+    0%,
+    100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
 @layer base {
     * {
         @apply border-border outline-ring/50;
@@ -151,5 +161,18 @@
 
     .font-pulp {
         font-family: var(--font-pulp);
+    }
+
+    .animate-spin-slow {
+        animation: spin360 30s linear infinite;
+    }
+
+    .animate-gradient {
+        animation: gradientBG 5s ease infinite;
+        background-size: 200% 200%;
+    }
+
+    .animate-border {
+        animation: borderGlow 4s linear infinite;
     }
 }

@@ -117,6 +117,7 @@ const portfolio = {
                 "React Three Fiber",
                 "MongoDB",
                 "Firebase",
+                "Pinecone"
             ],
             features: [
                 "Interactive star maps",
@@ -175,6 +176,79 @@ const portfolio = {
                 { name: "Muneer Hussain", role: "Frontend Developer" },
             ],
         },
+        {
+            id: 7,
+            name: "Professional Courses - USA",
+            description:
+                "A course watching platform that allows users to watch and learn from various courses, with a focus on user experience and accessibility.",
+            stack: [
+                "Next.js",
+                "Node.js",
+                "Express",
+                "MongoDB",
+                "Stripe"
+            ],
+            features: [
+                "Course management",
+                "User authentication",
+                "Payment integration",
+                "Responsive design",
+            ],
+            image: "/pc-usa.jpg",
+            links: {
+                github: "https://github.com/shayan-zaheer/pc-usa",
+                live: "https://pc-usa.com",
+            },
+            team: [
+                {
+                    name: "Shayan Zaheer",
+                    role: "Backend Developer",
+                },
+                {
+                    name: "Rahim Gangji",
+                    role: "Frontend Developer"
+                }
+            ],
+        },
+        {
+    id: 8,
+    name: "OpenAPI",
+    description:
+        "A modern API sharing platform where developers can upload and explore APIs written in Python, JavaScript, and Java — with options for public, private, free, and paid APIs, all organized for easy access and controlled visibility.",
+    stack: [
+        "React",
+        "Node.js",
+        "Express",
+        "MongoDB",
+    ],
+    features: [
+        "API upload and management",
+        "Public/private visibility controls",
+        "Free and paid API categorization",
+        "Blurred previews for paid APIs",
+        "Responsive and developer-friendly UI"
+    ],
+    image: "/openapi.jpg",
+    links: {
+        github: "https://github.com/shayan-zaheer/openapi",
+        live: "https://openapi-platform.com",
+    },
+    team: [
+        {
+            name: "Shayan Zaheer",
+            role: "Backend Developer"
+        },
+        {
+            name: "Ayan Tahir",
+            role: "Backend Developer"
+        },
+        {
+            name: "Arham Hasan",
+            role: "Frontend Developer"
+        },
+    ],
+}
+
     ],
 };
 

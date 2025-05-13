@@ -4,126 +4,7 @@ import { ReactLenis } from 'lenis/react'
 import { Github, ExternalLink } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-
-const projects = [
-    {
-        id: 1,
-        name: "HireVision",
-        description:
-            "A job app with a WhatsApp chatbot that helps users find jobs and submit their CVs. It includes an admin panel for managing job listings and CVs.",
-        stack: [
-            "Node.js",
-            "Hugging Face",
-            "Google Gemini API",
-            "Pinecone",
-            "Twilio",
-            "Redis",
-            "Next.js",
-        ],
-        features: [
-            "WhatsApp chatbot",
-            "Dynamic job listings",
-            "CV submission",
-            "Admin panel",
-            "Microservices architecture",
-        ],
-        image: "/hirevision.jpg",
-        links: {
-            github: "https://github.com/shayan-zaheer/hirevision",
-            live: "https://hirevision.com",
-        },
-    },
-    {
-        id: 2,
-        name: "Streamease",
-        description:
-            "A video streaming platform where users can stream and watch content, with a focus on ease of access and user experience.",
-        stack: ["React", "Node.js", "MongoDB", "Express", "Socket.io"],
-        features: [
-            "Live streaming",
-            "User authentication",
-            "Content discovery",
-            "Real-time chat",
-        ],
-        links: {
-            github: "https://github.com/shayan-zaheer/streamease",
-            live: "https://streamease.com",
-        },
-        image: "/streamease.jpg",
-    },
-    {
-        id: 3,
-        name: "MrBroast-panel",
-        description:
-            "An admin panel for a fast food chain, managing and tracking orders, delivery riders, and waiters alongside order history.",
-        stack: ["React", "Node.js", "Express", "MongoDB"],
-        features: ["Data management", "Analytics dashboard"],
-        links: {
-            github: "https://github.com/shayan-zaheer/mrbroast-panel",
-            live: "https://mrbroast-panel.com",
-        },
-        image: "/mrbroast.jpg",
-    },
-    {
-        id: 4,
-        name: "EZScript",
-        description:
-            "A web-based IDE designed specifically for JavaScript, with future expansions to other languages.",
-        stack: ["React", "Node.js", "WebSockets"],
-        features: [
-            "Real-time collaboration",
-            "Code editor",
-            "Live preview",
-            "Syntax highlighting",
-        ],
-        links: {
-            github: "https://github.com/shayan-zaheer/ezscript",
-            live: "https://ezscript.com",
-        },
-        image: "/ezscript.jpg",
-    },
-    {
-        id: 5,
-        name: "Exoplanetarium",
-        description:
-            "An interactive platform for learning about exoplanets, using data from space agencies and astronomical research.",
-        stack: ["React", "D3.js", "Node.js"],
-        features: [
-            "Interactive star maps",
-            "Exoplanet data visualization",
-            "Searchable database",
-        ],
-        links: {
-            github: "https://github.com/hashirjamal/exoplanetarium",
-            live: "https://exoplanetarium.com",
-        },
-        image: "/exoplanetarium.jpg",
-    },
-    {
-        id: 6,
-        name: "GemVault",
-        description:
-            "A blockchain-powered marketplace for buying and selling gemstones, where transactions are verified through NFTs and smart contracts.",
-        stack: [
-            "Ethereum",
-            "MetaMask",
-            "Smart Contracts",
-            "Node.js",
-            "MongoDB",
-        ],
-        features: [
-            "Gemstone NFTs",
-            "Smart contract verification",
-            "Escrow payment system",
-            "Certificate verification",
-        ],
-        links: {
-            github: "https://github.com/shayan-zaheer/gemvault",
-            live: "https://gemvault.com",
-        },
-        image: "/gemvault.jpg",
-    },
-];
+import { portfolio } from '@/lib/constants';
 
 function ProjectsPage() {
     return (
@@ -148,7 +29,7 @@ function ProjectsPage() {
                         </h2>
 
                         <div className="mt-12 space-y-24">
-                            {projects.map((project, index) => (
+                            {portfolio.projects.map((project, index) => (
                                 <div
                                     key={project.name}
                                     className={`flex flex-col ${
