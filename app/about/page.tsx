@@ -1,5 +1,6 @@
 "use client";
 
+import Loader from "@/components/loader";
 import Slider from "@/components/slider";
 import { ReactLenis } from "lenis/react";
 import { Info, PlayIcon } from "lucide-react";
@@ -13,8 +14,31 @@ import {
     Rocket,
     Lightbulb,
 } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
 
 function Page() {
+    const [isLoaded, setIsLoaded] = useState(false);
+    const videoRef = useRef<HTMLVideoElement>(null);
+
+    useEffect(() => {
+        const video = videoRef.current;
+        if (!video) return;
+
+        const handleCanPlay = () => {
+            setIsLoaded(true);
+        };
+
+        if (video.readyState >= video.HAVE_FUTURE_DATA) {
+            setIsLoaded(true);
+        } else {
+            video.addEventListener("canplay", handleCanPlay);
+        }
+
+        return () => {
+            video.removeEventListener("canplay", handleCanPlay);
+        };
+    }, []);
+
     const offers = [
         {
             icon: Bot,
@@ -70,6 +94,7 @@ function Page() {
         <ReactLenis root>
             <div className="w-full h-screen overflow-visible">
                 <video
+                    ref={videoRef}
                     src="/design-video.mp4"
                     autoPlay
                     muted
@@ -78,44 +103,53 @@ function Page() {
                     className="fixed top-0 left-0 w-full h-screen object-cover"
                 />
 
-                <div className="absolute inset-0 flex z-20 py-24">
-                    <div className="w-full px-4 md:px-12">
-                        <div className="font-poppins text-shadow-lg text-white">
-                            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight">
-                                About Me
-                            </h1>
-                            <h2 className="text-2xl sm:text-3xl md:text-4xl mt-2">
-                                Who I Am?
-                            </h2>
-                            <p className="mt-4 text-xs sm:text-sm md:text-md leading-relaxed max-w-md text-justify">
-                                I'm a developer driven by curiosity, creativity,
-                                and the constant hunger to grow. I love turning
-                                ideas into real, meaningful products — blending
-                                clean design with powerful functionality. With a
-                                strong focus on JavaScript, React, and Next.js,
-                                I'm always building, learning, and pushing
-                                myself to be better than yesterday. This is just
-                                the beginning.
-                            </p>
-                            <div className="flex gap-2 mt-4">
-                                <button className="flex items-center gap-2 py-2 px-4 bg-white rounded-md text-black">
-                                    <PlayIcon />
-                                    Resume
-                                </button>
-                                <button className="flex items-center gap-2 py-2 px-4 backdrop-blur-lg rounded-md bg-white/30 border border-white/60">
-                                    <Info />
-                                    LinkedIn
-                                </button>
-                            </div>
-                            <div className="mt-6 w-full">
-                                <h2 className="text-xl sm:text-2xl md:text-3xl my-2">
-                                    What I Offer
+                {!isLoaded && (
+                    <div className="fixed inset-0 z-20 flex items-center justify-center bg-black">
+                        <Loader />
+                    </div>
+                )}
+
+                {isLoaded && (
+                    <div className="absolute inset-0 flex z-20 py-24">
+                        <div className="w-full px-4 md:px-12">
+                            <div className="font-poppins text-shadow-lg text-white">
+                                <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight">
+                                    About Me
+                                </h1>
+                                <h2 className="text-2xl sm:text-3xl md:text-4xl mt-2">
+                                    Who I Am?
                                 </h2>
-                                <Slider offers={offers} />
+                                <p className="mt-4 text-xs sm:text-sm md:text-md leading-relaxed max-w-md text-justify">
+                                    I'm a developer driven by curiosity,
+                                    creativity, and the constant hunger to grow.
+                                    I love turning ideas into real, meaningful
+                                    products — blending clean design with
+                                    powerful functionality. With a strong focus
+                                    on JavaScript, React, and Next.js, I'm
+                                    always building, learning, and pushing
+                                    myself to be better than yesterday. This is
+                                    just the beginning.
+                                </p>
+                                <div className="flex gap-2 mt-4">
+                                    <button className="flex items-center gap-2 py-2 px-4 bg-white rounded-md text-black">
+                                        <PlayIcon />
+                                        Resume
+                                    </button>
+                                    <button className="flex items-center gap-2 py-2 px-4 backdrop-blur-lg rounded-md bg-white/30 border border-white/60">
+                                        <Info />
+                                        LinkedIn
+                                    </button>
+                                </div>
+                                <div className="mt-6 w-full">
+                                    <h2 className="text-xl sm:text-2xl md:text-3xl my-2">
+                                        What I Offer
+                                    </h2>
+                                    <Slider offers={offers} />
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                )}
             </div>
         </ReactLenis>
     );

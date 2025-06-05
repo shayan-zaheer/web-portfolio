@@ -22,7 +22,8 @@ import {
     SiSolidity,
     SiPostgresql,
     SiMysql,
-    SiStripe
+    SiStripe,
+    SiRabbitmq
 } from "react-icons/si";
 import React, { JSX, use } from "react";
 import { portfolio } from "@/lib/constants";
@@ -53,7 +54,8 @@ function page({ params }: { params: Promise<{ id: string }> }) {
         | "azure blob storage"
         | "metamask"
         | "pinecone"
-        | "stripe";
+        | "stripe"
+        | "rabbitmq";
 
     const techIcons: Record<Tech, JSX.Element> = {
         react: <FaReact className="text-blue-400" />,
@@ -215,6 +217,7 @@ function page({ params }: { params: Promise<{ id: string }> }) {
                 ></path>
             </svg>
         ),
+        rabbitmq: <SiRabbitmq className="text-red-500" />,
     };
 
     const selectedProject = portfolio.projects.find(
