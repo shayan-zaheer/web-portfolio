@@ -14,6 +14,7 @@ import {
     Rocket,
     Lightbulb,
 } from "lucide-react";
+import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 
 function Page() {
@@ -125,7 +126,7 @@ function Page() {
                                     I love turning ideas into real, meaningful
                                     products — blending clean design with
                                     powerful functionality. With a strong focus
-                                    on JavaScript, React, and Next.js, I'm
+                                    on JavaScript, React, .NET, and Next.js, I'm
                                     always building, learning, and pushing
                                     myself to be better than yesterday. This is
                                     just the beginning.
@@ -135,10 +136,12 @@ function Page() {
                                         <PlayIcon />
                                         Resume
                                     </button>
-                                    <button className="flex items-center gap-2 py-2 px-4 backdrop-blur-lg rounded-md bg-white/30 border border-white/60">
-                                        <Info />
-                                        LinkedIn
-                                    </button>
+                                    <Link href="https://www.linkedin.com/in/shayan-zaheer/">
+                                        <button className="flex items-center gap-2 py-2 px-4 backdrop-blur-lg rounded-md bg-white/30 border border-white/60 cursor-pointer hover:bg-white/50 transition-all">
+                                            <Info />
+                                            LinkedIn
+                                        </button>
+                                    </Link>
                                 </div>
                                 <div className="mt-6 w-full">
                                     <h2 className="text-xl sm:text-2xl md:text-3xl my-2">

@@ -25,7 +25,7 @@ const portfolio = {
             image: "/hirevision.jpg",
             links: {
                 github: "https://github.com/shayan-zaheer/hirevision",
-                live: "https://hirevision.com",
+                live: "Under development",
             },
             team: [
                 {
@@ -41,21 +41,20 @@ const portfolio = {
                 "A video streaming platform where users can stream and watch content, with a focus on ease of access and user experience.",
             stack: [
                 "React",
-                "Node.js",
-                "MySQL",
-                "Express",
-                "Azure Blob Storage",
+                ".NET",
+                "SQL Server",
+                "AWS S3",
             ],
             features: [
                 "Live streaming",
                 "User authentication",
                 "Content discovery",
-                "Real-time chat",
+                "HLS Support",
             ],
             image: "/streamease.jpg",
             links: {
                 github: "https://github.com/shayan-zaheer/streamease",
-                live: "https://streamease.com",
+                live: "https://streamease-lemon.vercel.app/",
             },
             team: [
                 { name: "Shayan Zaheer", role: "Backend Developer" },
@@ -65,15 +64,15 @@ const portfolio = {
         },
         {
             id: 3,
-            name: "MrBroast-panel",
+            name: "TableOps",
             description:
                 "An admin panel for a fast food chain, managing and tracking orders, delivery riders, and waiters alongside order history.",
             stack: ["React", "Node.js", "Express", "MongoDB"],
             features: ["Data management", "Analytics dashboard"],
-            image: "/mrbroast.jpg",
+            image: "/tableops.jpg",
             links: {
-                github: "https://github.com/shayan-zaheer/mrbroast-panel",
-                live: "https://mrbroast-panel.com",
+                github: "https://github.com/shayan-zaheer/TableOps",
+                live: "Under development",
             },
             team: [
                 {
@@ -97,7 +96,7 @@ const portfolio = {
             image: "/ezscript.jpg",
             links: {
                 github: "https://github.com/shayan-zaheer/ezscript",
-                live: "https://ezscript.com",
+                live: "https://ezscript.vercel.app/",
             },
             team: [
                 {
@@ -128,7 +127,7 @@ const portfolio = {
             image: "/exoplanetarium.jpg",
             links: {
                 github: "https://github.com/hashirjamal/Exoplanetarium",
-                live: "https://exoplanetarium.com",
+                live: "https://exo-planetarium.vercel.app/",
             },
             team: [
                 { name: "Shayan Zaheer", role: "Frontend Developer" },
@@ -177,36 +176,36 @@ const portfolio = {
                 { name: "Muneer Hussain", role: "Frontend Developer" },
             ],
         },
+        // {
+        //     id: 7,
+        //     name: "Professional Courses - USA",
+        //     description:
+        //         "A course watching platform that allows users to watch and learn from various courses, with a focus on user experience and accessibility.",
+        //     stack: ["Next.js", "Node.js", "Express", "MongoDB", "Stripe"],
+        //     features: [
+        //         "Course management",
+        //         "User authentication",
+        //         "Payment integration",
+        //         "Responsive design",
+        //     ],
+        //     image: "/pc-usa.jpg",
+        //     links: {
+        //         github: "https://github.com/shayan-zaheer/pc-usa",
+        //         live: "Under development",
+        //     },
+        //     team: [
+        //         {
+        //             name: "Shayan Zaheer",
+        //             role: "Backend Developer",
+        //         },
+        //         {
+        //             name: "Rahim Gangji",
+        //             role: "Frontend Developer",
+        //         },
+        //     ],
+        // },
         {
             id: 7,
-            name: "Professional Courses - USA",
-            description:
-                "A course watching platform that allows users to watch and learn from various courses, with a focus on user experience and accessibility.",
-            stack: ["Next.js", "Node.js", "Express", "MongoDB", "Stripe"],
-            features: [
-                "Course management",
-                "User authentication",
-                "Payment integration",
-                "Responsive design",
-            ],
-            image: "/pc-usa.jpg",
-            links: {
-                github: "https://github.com/shayan-zaheer/pc-usa",
-                live: "https://pc-usa.vercel.app/",
-            },
-            team: [
-                {
-                    name: "Shayan Zaheer",
-                    role: "Backend Developer",
-                },
-                {
-                    name: "Rahim Gangji",
-                    role: "Frontend Developer",
-                },
-            ],
-        },
-        {
-            id: 8,
             name: "OpenAPI",
             description:
                 "A modern API sharing platform where developers can upload and explore APIs written in Python, JavaScript, and Java — with options for public, private, free, and paid APIs, all organized for easy access and controlled visibility.",
@@ -221,7 +220,7 @@ const portfolio = {
             image: "/openapi.jpg",
             links: {
                 github: "https://github.com/shayan-zaheer/OpenAPI",
-                live: "https://openapi-platform.com",
+                live: "https://open-api-iota-eosin.vercel.app/",
             },
             team: [
                 {

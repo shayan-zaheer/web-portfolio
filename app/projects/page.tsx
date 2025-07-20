@@ -138,7 +138,7 @@ function ProjectsPage() {
                                                     <Github size={16} />
                                                     GitHub
                                                 </a>
-                                                {project.links.live && (
+                                                {project.links.live != "Under development" ? (
                                                     <a
                                                         href={
                                                             project.links.live
@@ -152,6 +152,10 @@ function ProjectsPage() {
                                                         />
                                                         Live Demo
                                                     </a>
+                                                ) : (
+                                                    <span className="text-white">
+                                                        Live Demo: Under development
+                                                    </span>
                                                 )}
                                             </div>
                                         </div>
