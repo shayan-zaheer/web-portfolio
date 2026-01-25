@@ -2,6 +2,35 @@ const portfolio = {
     projects: [
         {
             id: 1,
+            name: "Phonolytics",
+            description: "An AI-driven conversation intelligence platform that analyzes communication in real time to fairly evaluate agent performance by separating effort from client conviction, providing sentiment analysis, automated call scoring, and live coaching insights to improve communication quality, motivation, and operational efficiency across sales, support, BPOs, and other service-driven industries.",
+            stack: [
+                "React",
+                "FastAPI",
+                "Gladia",
+                "Qwen3",
+                "Redis",
+                "PostgreSQL",
+            ],
+            features: [
+                "Real-time transcription",
+                "AI-powered analysis",
+                "Sales simulator"
+            ],
+            image: "/phonolytics.png",
+            links: {
+                github: "https://github.com/shayan-zaheer/Phonolytics-DesktopApp",
+                live: "https://phonolytics.com/",
+            },
+            team: [
+                { name: "Shayan Zaheer", role: "Backend Developer" },
+                { name: "Muneer Hussain", role: "Frontend Developer" },
+                { name: "Hashir Jamal", role: "Backend Developer"},
+                { name: "Muhammad Bilal", role: "AI Developer" },
+            ],
+        },
+        {
+            id: 2,
             name: "HireVision",
             description:
                 "A job app with a WhatsApp chatbot that helps users find jobs and submit their CVs. It includes an admin panel for managing job listings and CVs.",
@@ -35,7 +64,7 @@ const portfolio = {
             ],
         },
         {
-            id: 2,
+            id: 3,
             name: "Streamease",
             description:
                 "A video streaming platform where users can stream and watch content, with a focus on ease of access and user experience.",
@@ -63,7 +92,7 @@ const portfolio = {
             ],
         },
         {
-            id: 3,
+            id: 4,
             name: "TableOps",
             description:
                 "An admin panel for a fast food chain, managing and tracking orders, delivery riders, and waiters alongside order history.",
@@ -82,7 +111,7 @@ const portfolio = {
             ],
         },
         {
-            id: 4,
+            id: 5,
             name: "EZScript",
             description:
                 "A web-based IDE designed specifically for JavaScript, with future expansions to other languages.",
@@ -106,7 +135,7 @@ const portfolio = {
             ],
         },
         {
-            id: 5,
+            id: 6,
             name: "Exoplanetarium",
             description:
                 "An interactive platform for learning about exoplanets, using data from space agencies and astronomical research.",
@@ -139,7 +168,7 @@ const portfolio = {
             ],
         },
         {
-            id: 6,
+            id: 7,
             name: "GemVault",
             description:
                 "A blockchain-powered marketplace for buying and selling gemstones, where transactions are verified through NFTs and smart contracts.",
@@ -151,6 +180,7 @@ const portfolio = {
                 "Express",
                 "PostgreSQL",
                 "Next.js",
+                "RabbitMQ",
             ],
             features: [
                 "Gemstone NFTs",
@@ -205,7 +235,7 @@ const portfolio = {
         //     ],
         // },
         {
-            id: 7,
+            id: 8,
             name: "OpenAPI",
             description:
                 "A modern API sharing platform where developers can upload and explore APIs written in Python, JavaScript, and Java — with options for public, private, free, and paid APIs, all organized for easy access and controlled visibility.",
