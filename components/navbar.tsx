@@ -19,9 +19,9 @@ function Navbar() {
                     <li>
                         <Link href="/about">About</Link>
                     </li>
-                    {/* <li>
+                    <li>
                         <Link href="/experience">Experience</Link>
-                    </li> */}
+                    </li>
                     <li>
                         <Link href="/projects">Projects</Link>
                     </li>
