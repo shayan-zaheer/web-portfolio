@@ -4,7 +4,7 @@ import Link from "next/link";
 function page() {
     const smileys = [
         { section: "About", color: "yellow", href: "/about" },
-        // { section: "Experience", color: "grey", href: "/experience" },
+        { section: "Experience", color: "grey", href: "/experience" },
         { section: "Projects", color: "blue", href: "/projects" },
         { section: "Resume", color: "red", href: "/resume" },
     ];
