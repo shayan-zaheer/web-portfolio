@@ -6,7 +6,7 @@ function page() {
         { section: "About", color: "yellow", href: "/about" },
         { section: "Experience", color: "grey", href: "/experience" },
         { section: "Projects", color: "blue", href: "/projects" },
-        { section: "Resume", color: "red", href: "/resume" },
+        { section: "Resume", color: "red", href: "/resume.pdf" },
     ];
 
     return (
@@ -16,7 +16,12 @@ function page() {
             </h1>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-2">
                 {smileys.map((smiley, index) => (
-                    <Link href={smiley.href} key={index}>
+                    <Link 
+                        href={smiley.href} 
+                        key={index}
+                        target={smiley.href.endsWith('.pdf') ? "_blank" : undefined}
+                        rel={smiley.href.endsWith('.pdf') ? "noopener noreferrer" : undefined}
+                    >
                         <Smiley color={smiley.color} section={smiley.section} />
                     </Link>
                 ))}

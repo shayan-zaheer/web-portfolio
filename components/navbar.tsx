@@ -26,7 +26,7 @@ function Navbar() {
                         <Link href="/projects">Projects</Link>
                     </li>
                     <li>
-                        <Link href="/resume">Resume</Link>
+                        <Link href="/resume.pdf" target="_blank" rel="noopener noreferrer">Resume</Link>
                     </li>
                 </ul>
             </div>
